@@ -9,7 +9,8 @@ import java.util.concurrent.Future;
 public class FixedThreadPoolExample {
     public static void main(String[] args) throws Exception {
         // Create a fixed thread pool containing one thread
-        ExecutorService fixedPool = Executors.newFixedThreadPool(2);
+        //ExecutorService fixedPool = Executors.newFixedThreadPool(2);
+        ExecutorService fixedPool = Executors.newWorkStealingPool();
  
         // Create a Callable object of anonymous class
         Callable<String> aCallable = new Callable<String>(){
